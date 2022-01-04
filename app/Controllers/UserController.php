@@ -13,4 +13,6 @@ class UserController
 
         view('user/index', ["users" => $users]);
     }
+
+    
 }

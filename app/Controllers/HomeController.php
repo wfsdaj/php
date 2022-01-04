@@ -4,12 +4,14 @@ namespace App\Controllers;
 
 use App\Models\User;
 use System\Http\Request;
-use System\Support\Hash;
 
 class HomeController
 {
     public function index()
     {
+        $a = Request::get('a');
+        dump($a);
+        
         view('home');
     }
 }

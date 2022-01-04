@@ -1,3 +1,2 @@
-<hr>
-_footer.php
-<hr>
+</body>
+</html>
