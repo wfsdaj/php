@@ -73,3 +73,8 @@ function getClientIP(): string
 
     return $_SERVER['REMOTE_ADDR'] ?? '';
 }
+
+function e(string $string)
+{
+    return htmlspecialchars($string, ENT_QUOTES);
+}

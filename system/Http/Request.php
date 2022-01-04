@@ -41,4 +41,9 @@ class Request
 
         return $data;
     }
+
+    public static function method()
+    {
+        return strtoupper($_SERVER['REQUEST_METHOD']);
+    }
 }

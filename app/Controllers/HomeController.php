@@ -9,7 +9,6 @@ class HomeController
 {
     public function index()
     {
-        // var_dump(Request::get('a'));
         view('home');
     }
 }

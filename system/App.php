@@ -22,6 +22,7 @@ class App
         // 使用 $URL 中的 URL 部分创建数组
         $this->splitUrl();
         $this->route();
+        $this->filterInput();
     }
 
     /**
@@ -92,6 +93,30 @@ class App
         } else {
             $page = new \App\Controllers\ErrorController();
             $page->index();
+        }
+    }
+
+    /**
+     * 过滤 $_POST 及 $_GET 数据
+     */
+    private function filterInput()
+    {
+        // 过滤 $_POST
+        if (!empty($_POST)) {
+            $_POST = str_replace(
+                ['<', '>', '"', "'", '&'],
+                ['&lt;', '&gt;', '&quot;', '&amp;', ''],
+                $_POST
+            );
+        }
+
+        // 过滤 $_GET
+        if (!empty($_GET)) {
+            $_GET = str_replace(
+                ['<', '>', '"', "'"],
+                ['&lt;', '&gt;', '&quot;', ''],
+                $_GET
+            );
         }
     }
 }
