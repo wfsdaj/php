@@ -7,6 +7,14 @@
 
 namespace System;
 
+/**
+ * @method alert(string $msg)
+ * @method error(string $msg)
+ * @method warning(string $msg)
+ * @method notice(string $msg)
+ * @method info(string $msg)
+ * @method debug(string $msg)
+ */
 class Log
 {
     const LEVELS = [

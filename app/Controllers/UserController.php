@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-use System\View;
 use App\Models\User;
 
 class UserController
@@ -12,6 +11,6 @@ class UserController
         $user = new User();
         $users = $user->all();
 
-        View::render('user/index', ["users" => $users]);
+        view('user/index', ["users" => $users]);
     }
 }

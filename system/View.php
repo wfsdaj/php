@@ -9,6 +9,6 @@ class View
         foreach ($data as $k => $v) {
             $$k = $v;
         }
-        require __DIR__ . '/../views/' . $file . '.php';
+        include ROOT_PATH . 'views/' . $file . '.php';
     }
 }

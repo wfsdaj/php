@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use System\View;
+
 function dump($value)
 {
     echo '<pre>';
@@ -11,12 +13,7 @@ function dump($value)
 
 function view(string $file, array $data = []): void
 {
-    // 从关联数组创建变量
-    foreach ($data as $key => $value) {
-        $$key = $value;
-    }
-
-    include ROOT_PATH . 'views/' . $file . 'php';
+    View::render($file, $data);
 }
 
 function redirect($path)
