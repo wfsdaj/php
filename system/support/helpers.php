@@ -61,3 +61,18 @@ function isGet(): bool
 {
     return strtoupper($_SERVER['REQUEST_METHOD']) === 'GET';
 }
+
+// 返回当前客户端IP
+function getClientIP(): string
+{
+    $client_ip = filter_var($_SERVER['HTTP_CLIENT_IP'] ?? '', FILTER_VALIDATE_IP);
+    $forwarded = filter_var($_SERVER['HTTP_X_FORWARDED_FOR'] ?? '', FILTER_VALIDATE_IP);
+
+    if (!empty($client_ip)) {
+        return $client_ip;
+    } elseif (!empty($forwarded)) {
+        return $forwarded;
+    }
+
+    return $_SERVER['REMOTE_ADDR'] ?? '';
+}
