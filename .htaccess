@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+  # 如果你将网站根目录指定为 /public 目录，则不需要本文件
+  # 如果你无法指定网站根目录（虚拟主机往往没有该权限）
+  # 该文件会将访问重定向到 /public 目录
+
+  RewriteEngine on
+  RewriteRule ^$   public/   [L]
+  RewriteRule (.*) public/$1 [L]
+</IfModule>

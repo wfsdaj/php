@@ -1,0 +1,27 @@
+{
+    "name": "wfdaj/php",
+    "description": "PHP 学习",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wfdaj",
+            "email": "wfdaj@qq.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "System\\": "system/"
+        },
+        "files": [
+            "system/support/helpers.php"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}
