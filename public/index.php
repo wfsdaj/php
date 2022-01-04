@@ -20,6 +20,10 @@ define('ROOT_PATH', dirname(__DIR__) . '/');
 // 定义项目应用文件夹
 define('APP_PATH', ROOT_PATH . 'app' . '/');
 
+// 内存及运行时间起始记录，用于计算运行耗时
+define('START_MEMORY', memory_get_usage());
+define('START_TIME',   microtime(true));
+
 // 是否显示错误消息
 if (config('debug') === true) {
     error_reporting(E_ALL);
